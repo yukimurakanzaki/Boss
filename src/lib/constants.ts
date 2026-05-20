@@ -23,6 +23,15 @@ export const BOSS_ROLES = {
 export type BossRole = keyof typeof BOSS_ROLES
 
 export const ALLOWED_TRANSITIONS: Record<string, Record<ElisStatus, ElisStatus[]>> = {
+  admin: {
+    'Menunggu validasi': ['Revisi', 'Ditolak', 'Menunggu persetujuan'],
+    'Revisi': [],
+    'Ditolak': [],
+    'Menunggu persetujuan': [],
+    'Disetujui': ['Sedang diproses'],
+    'Sedang diproses': ['Selesai'],
+    'Selesai': [],
+  },
   admin_lit: {
     'Menunggu validasi': ['Revisi', 'Ditolak', 'Menunggu persetujuan'],
     'Sedang diproses': ['Selesai'],
@@ -37,6 +46,24 @@ export const ALLOWED_TRANSITIONS: Record<string, Record<ElisStatus, ElisStatus[]
     'Menunggu validasi': [],
     'Revisi': [],
     'Ditolak': [],
+    'Disetujui': [],
+    'Sedang diproses': [],
+    'Selesai': [],
+  },
+  requester: {
+    'Menunggu validasi': [],
+    'Revisi': [],
+    'Ditolak': [],
+    'Menunggu persetujuan': [],
+    'Disetujui': [],
+    'Sedang diproses': [],
+    'Selesai': [],
+  },
+  viewer: {
+    'Menunggu validasi': [],
+    'Revisi': [],
+    'Ditolak': [],
+    'Menunggu persetujuan': [],
     'Disetujui': [],
     'Sedang diproses': [],
     'Selesai': [],
